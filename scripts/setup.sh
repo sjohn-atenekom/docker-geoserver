@@ -51,7 +51,8 @@ pushd ${work_dir}/plugins
 wget -c https://tenet.dl.sourceforge.net/project/geoserver/GeoServer/${GS_VERSION}/extensions/geoserver-${GS_VERSION}-vectortiles-plugin.zip -O geoserver-${GS_VERSION}-vectortiles-plugin.zip
 # CSS styling
 wget -c https://tenet.dl.sourceforge.net/project/geoserver/GeoServer/${GS_VERSION}/extensions/geoserver-${GS_VERSION}-css-plugin.zip -O geoserver-${GS_VERSION}-css-plugin.zip
-
+# YSLD styling
+wget -c https://tenet.dl.sourceforge.net/project/geoserver/GeoServer/${GS_VERSION}/extensions/geoserver-${GS_VERSION}-css-plugin.zip -O geoserver-${GS_VERSION}-ysld-plugin.zip
 #CSW
 wget -c https://tenet.dl.sourceforge.net/project/geoserver/GeoServer/${GS_VERSION}/extensions/geoserver-${GS_VERSION}-csw-plugin.zip -O geoserver-${GS_VERSION}-csw-plugin.zip
 # WPS
@@ -66,6 +67,8 @@ wget -c https://sourceforge.net/projects/geoserver/files/GeoServer/${GS_VERSION}
 wget -c https://sourceforge.net/projects/geoserver/files/GeoServer/${GS_VERSION}/extensions/geoserver-${GS_VERSION}-pyramid-plugin.zip/download -O geoserver-${GS_VERSION}-pyramid-plugin.zip
 #GDAL
 wget -c https://sourceforge.net/projects/geoserver/files/GeoServer/${GS_VERSION}/extensions/geoserver-${GS_VERSION}-gdal-plugin.zip/download -O geoserver-${GS_VERSION}-gdal-plugin.zip
+
+
 
 if [ ! -d gdal ];
 then

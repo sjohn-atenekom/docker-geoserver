@@ -14,7 +14,7 @@ RUN apt-get install -y  fonts-cantarell lmodern ttf-aenigma ttf-georgewilliams t
     build-essential libapr1-dev libssl-dev default-jdk
 #-------------Application Specific Stuff ----------------------------------------------------
 
-ARG GS_VERSION=2.13.0
+ARG GS_VERSION=2.14.0
 ARG WAR_URL=http://downloads.sourceforge.net/project/geoserver/GeoServer/${GS_VERSION}/geoserver-${GS_VERSION}-war.zip
 ENV GEOSERVER_DATA_DIR /opt/geoserver/data_dir
 ENV ENABLE_JSONP true
