@@ -52,7 +52,7 @@ wget -c https://tenet.dl.sourceforge.net/project/geoserver/GeoServer/${GS_VERSIO
 # CSS styling
 wget -c https://tenet.dl.sourceforge.net/project/geoserver/GeoServer/${GS_VERSION}/extensions/geoserver-${GS_VERSION}-css-plugin.zip -O geoserver-${GS_VERSION}-css-plugin.zip
 # YSLD styling
-wget -c https://tenet.dl.sourceforge.net/project/geoserver/GeoServer/${GS_VERSION}/extensions/geoserver-${GS_VERSION}-css-plugin.zip -O geoserver-${GS_VERSION}-ysld-plugin.zip
+wget -c https://tenet.dl.sourceforge.net/project/geoserver/GeoServer/${GS_VERSION}/extensions/geoserver-${GS_VERSION}-ysld-plugin.zip -O geoserver-${GS_VERSION}-ysld-plugin.zip
 #CSW
 wget -c https://tenet.dl.sourceforge.net/project/geoserver/GeoServer/${GS_VERSION}/extensions/geoserver-${GS_VERSION}-csw-plugin.zip -O geoserver-${GS_VERSION}-csw-plugin.zip
 # WPS
