@@ -21,10 +21,14 @@ ENV ENABLE_JSONP true
 ENV MAX_FILTER_RULES 20
 ENV OPTIMIZE_LINE_WIDTH false
 ENV GEOWEBCACHE_CACHE_DIR /opt/geoserver/data_dir/gwc
+
+# SF EDIT: Added -DGEOSERVER_CONSOLE_DISABLED=true  to disable Web Interface
+
 ENV GEOSERVER_OPTS "-Djava.awt.headless=true -server -Xms2G -Xmx4G -Xrs -XX:PerfDataSamplingInterval=500 \
  -Dorg.geotools.referencing.forceXY=true -XX:SoftRefLRUPolicyMSPerMB=36000 -XX:+UseParallelGC -XX:NewRatio=2 \
  -XX:+CMSClassUnloadingEnabled -Dfile.encoding=UTF8 -Duser.timezone=GMT -Djavax.servlet.request.encoding=UTF-8 \
- -Djavax.servlet.response.encoding=UTF-8 -Duser.timezone=GMT -Dorg.geotools.shapefile.datetime=true"
+ -Djavax.servlet.response.encoding=UTF-8 -Duser.timezone=GMT -Dorg.geotools.shapefile.datetime=true \
+ -DGEOSERVER_CONSOLE_DISABLED=true "
 #-XX:+UseConcMarkSweepGC use this rather than parallel GC?
 ENV JAVA_OPTS "$JAVA_OPTS $GEOSERVER_OPTS"
 ENV GDAL_DATA /usr/local/gdal_data
@@ -50,6 +54,9 @@ RUN chmod +x /scripts/*.sh
 RUN /scripts/setup.sh
 ADD scripts/controlflow.properties $GEOSERVER_DATA_DIR
 ADD scripts/sqljdbc4-4.0.jar $CATALINA_HOME/webapps/geoserver/WEB-INF/lib/
+
+# SF EDIT: Remove jar file for Web Interface
+RUN rm -f $CATALINA_HOME/webapps/geoserver/WEB-INF/lib/gs-web*-.jar
 
 # Clean up APT when done.
 RUN echo "Yes, do as I say!" | apt-get remove --force-yes sed
