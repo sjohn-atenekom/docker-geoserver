@@ -56,7 +56,8 @@ ADD scripts/controlflow.properties $GEOSERVER_DATA_DIR
 ADD scripts/sqljdbc4-4.0.jar $CATALINA_HOME/webapps/geoserver/WEB-INF/lib/
 
 # SF EDIT: Remove jar file for Web Interface
-RUN rm -f $CATALINA_HOME/webapps/geoserver/WEB-INF/lib/gs-web*-.jar
+# auskommentiert, da womöglich nicht notwendig
+#RUN rm -f $CATALINA_HOME/webapps/geoserver/WEB-INF/lib/gs-web*-.jar
 
 # Clean up APT when done.
 RUN echo "Yes, do as I say!" | apt-get remove --force-yes sed
